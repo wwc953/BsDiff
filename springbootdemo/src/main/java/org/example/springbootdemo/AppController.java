@@ -5,21 +5,22 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class AppController {
-    @GetMapping("/test")
-    public void test() {
-
+    @GetMapping("/bsdiff")
+    public int bsdiff() {
         int i = BsdiffUtils.getInstance().bsdiff("/Users/wangwc/Downloads/ultralytics-8.0.4.zip",
                 "/Users/wangwc/Downloads/ultralytics-8.0.4-new.zip",
                 "/Users/wangwc/Downloads/ultralytics-8.0.4-patch.patch");
-        System.out.printf("----" + i);
+        System.out.println("--bsdiff--" + i);
+        return i;
     }
 
     @GetMapping("/bspatch")
-    public void bspatch() {
+    public int bspatch() {
         int i = BsdiffUtils.getInstance().bspatch("/Users/wangwc/Downloads/ultralytics-8.0.4.zip",
                 "/Users/wangwc/Downloads/ultralytics-8.0.4-new2222.zip",
                 "/Users/wangwc/Downloads/ultralytics-8.0.4-patch.patch");
-        System.out.printf("----" + i);
+        System.out.println("--bspatch--" + i);
+        return i;
     }
 
 }

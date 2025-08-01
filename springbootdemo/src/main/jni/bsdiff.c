@@ -27,21 +27,17 @@
 #if 0
 __FBSDID("$FreeBSD: src/usr.bin/bsdiff/bsdiff/bsdiff.c,v 1.1 2005/08/06 01:59:05 cperciva Exp $");
 #endif
-#include "org_example_springbootdemo_Bsdiff.h"
 
-#include <sys/types.h>
-
-#include "bzip2/bzlib.c"
-#include "bzip2/crctable.c"
-#include "bzip2/compress.c"
-#include "bzip2/decompress.c"
-#include "bzip2/randtable.c"
-#include "bzip2/blocksort.c"
-#include "bzip2/huffman.c"
+//#include <sys/types.h>
 
 //#include <bzlib.h>
-//引入 jni 库
-#include <jni.h>
+//#include "bzip2/bzlib.c"
+//#include "bzip2/crctable.c"
+//#include "bzip2/compress.c"
+//#include "bzip2/decompress.c"
+//#include "bzip2/randtable.c"
+//#include "bzip2/blocksort.c"
+//#include "bzip2/huffman.c"
 
 #include <err.h>
 #include <fcntl.h>
@@ -413,21 +409,4 @@ int Bsdiff(int argc,char *argv[])
 	free(new);
 
 	return 0;
-}
-
-JNIEXPORT jint JNICALL Java_org_example_springbootdemo_Bsdiff_bsdiff
-  (JNIEnv *env, jclass clazz, jstring old, jstring new, jstring patch)
-{
-    int argc = 4;
-    char *argv[argc];
-    argv[0] = "bsdiff";
-    argv[1] = (char *)((*env) -> GetStringUTFChars(env, old, 0));
-    argv[2] = (char *)((*env) -> GetStringUTFChars(env, new, 0));
-    argv[3] = (char *)((*env) -> GetStringUTFChars(env, patch, 0));
-    int result = Bsdiff(argc, argv);
-    //释放资源
-    (*env) -> ReleaseStringUTFChars(env,old,argv[1]);
-    (*env) -> ReleaseStringUTFChars(env,new,argv[2]);
-    (*env) -> ReleaseStringUTFChars(env,patch,argv[3]);
-    return result;
 }

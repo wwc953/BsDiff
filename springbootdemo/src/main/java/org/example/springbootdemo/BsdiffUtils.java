@@ -19,8 +19,11 @@ public class BsdiffUtils {
     public native static int bspatch(String oldfile, String newfile, String patchfile);
 
     static {
-        System.load("/Users/wangwc/IdeaProjects/BsDiff/springbootdemo/src/main/resources/lib/bsdiff.so");
-        System.load("/Users/wangwc/IdeaProjects/BsDiff/springbootdemo/src/main/resources/lib/bspatch.so");
+//        System.load("/Users/wangwc/IdeaProjects/BsDiff/springbootdemo/src/main/resources/lib/bsdiff.so");
+//        System.load("/Users/wangwc/IdeaProjects/BsDiff/springbootdemo/src/main/resources/lib/bspatch.so");
+
+        System.load("/Users/wangwc/IdeaProjects/BsDiff/springbootdemo/src/main/resources/lib/libbsdiff.so");
+
     }
 
 
