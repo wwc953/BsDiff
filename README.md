@@ -4,6 +4,8 @@ https://ivonhoe.github.io/2016/12/16/Mac-Linux%E4%B8%8Bgcc%E7%BC%96%E8%AF%91%E5%
 
 https://github.com/houjinyun/bsdiff-android
 
+## 方式一
+
 <img src="./pic/1.png">
 
 ### 编译java文件为class
@@ -64,5 +66,11 @@ https://github.com/houjinyun/bsdiff-android
     gcc bspatch.o -o bspatch.so -shared -v
 
 
+
+
+## 方法二 bsdiff和bspatch打一个包
+    jni目录
+    cd ./jni
+    gcc -fPIC -I/Library/Java/JavaVirtualMachines/jdk1.8.0_251.jdk/Contents/Home/include -I/Library/Java/JavaVirtualMachines/jdk1.8.0_251.jdk/Contents/Home/include/darwin  -shared -o libbsdiff.so org_example_springbootdemo_BsdiffUtils.c
 
 
