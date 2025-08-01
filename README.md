@@ -4,6 +4,7 @@ https://ivonhoe.github.io/2016/12/16/Mac-Linux%E4%B8%8Bgcc%E7%BC%96%E8%AF%91%E5%
 
 https://github.com/houjinyun/bsdiff-android
 
+<img src="./pic/1.png">
 
 #编译java文件为class
 javac org.example.springbootdemo.Bsdiff.java
