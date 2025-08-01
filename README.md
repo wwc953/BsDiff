@@ -15,6 +15,9 @@ javah -jni -classpath /Users/wangwc/IdeaProjects/springbootdemo/target/classes o
 #进入c目录，将bzip2和bsdiff源码放入c目录
 cd c
 
+![Uploading image.png…]()
+
+
 #修改bsdiff.c 
 #include "org_example_springbootdemo_BsdiffUtils.h"
 
