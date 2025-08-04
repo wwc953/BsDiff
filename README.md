@@ -1,15 +1,10 @@
-#参考链接
-
-https://ivonhoe.github.io/2016/12/16/Mac-Linux%E4%B8%8Bgcc%E7%BC%96%E8%AF%91%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93-so%E6%96%87%E4%BB%B6/index.html
-
-https://github.com/houjinyun/bsdiff-android
 
 ## 方式一
 
 <img src="./pic/1.png">
 
 ### 编译java文件为class
-    javac org.example.springbootdemo.Bsdiff.java
+    javac org.example.springbootdemo.BsdiffUtils.java
 
 ### 生成org_example_springbootdemo_BsdiffUtils.h头文件
     javah -jni -classpath /Users/wangwc/IdeaProjects/springbootdemo/target/classes org.example.springbootdemo.BsdiffUtils
@@ -66,9 +61,10 @@ https://github.com/houjinyun/bsdiff-android
     gcc bspatch.o -o bspatch.so -shared -v
 
 
+## 方法二 bsdiff和bspatch
 
+<img src="./pic/3.png">
 
-## 方法二 bsdiff和bspatch打一个包
     jni目录
     cd ./jni
     gcc -fPIC -I/Library/Java/JavaVirtualMachines/jdk1.8.0_251.jdk/Contents/Home/include -I/Library/Java/JavaVirtualMachines/jdk1.8.0_251.jdk/Contents/Home/include/darwin  -shared -o libbsdiff.so org_example_springbootdemo_BsdiffUtils.c
@@ -88,3 +84,15 @@ https://github.com/houjinyun/bsdiff-android
 
     2、System.load 绝对路径
     System.load("/Users/wangwc/IdeaProjects/BsDiff/springbootdemo/src/main/resources/lib/libbsdiff.so");
+
+### 参考链接
+
+[Java Native Interface (JNI)](https://www3.ntu.edu.sg/home/ehchua/programming/java/javanativeinterface.html
+)
+
+[以bsdiff.c和bspatch.c为例编译bsdiff.so](https://ivonhoe.github.io/2016/12/16/Mac-Linux%E4%B8%8Bgcc%E7%BC%96%E8%AF%91%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93-so%E6%96%87%E4%BB%B6/index.html
+)
+
+[bsdiff-android](https://github.com/houjinyun/bsdiff-android
+)
+
