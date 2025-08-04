@@ -18,6 +18,12 @@ public class BsdiffUtils {
 
     public native static int bspatch(String oldfile, String newfile, String patchfile);
 
+
+    /**
+     * Java程序加载`.so文件时，如果使用System.loadLibrary("bsdiff")，
+     * JVM会先在java.library.path指定的目录中查找名为libbsdiff.jnilib`（Mac上是`.jnilib`，而非`.so`）的库文件，如果没有找到，才会尝试libbsdiff.so。
+     * 如果在java.library.path中存在libbsdiff.so但不存在libbsdiff.jnilib，就会报no bsdiff in java.library.path的错误。
+     */
     static {
 
                 System.out.println("======"+System.getProperty("java.library.path"));
